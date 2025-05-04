@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "name": "Aloe Vera",
+    "type": "Succulent",
+    "weeklyWaterNeed": 0.3,
+    "expectedHumidity": 40,
+    "coverImage": "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": "2",
+    "name": "Peace Lily",
+    "type": "Flowering",
+    "weeklyWaterNeed": 1.2,
+    "expectedHumidity": 60,
+    "coverImage": "https://images.unsplash.com/photo-1620311497344-bce841c9c060?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": "3",
+    "name": "Snake Plant",
+    "type": "Foliage",
+    "weeklyWaterNeed": 0.5,
+    "expectedHumidity": 35,
+    "coverImage": "https://images.unsplash.com/photo-1611211232932-da3113c5b960?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": "4",
+    "name": "Fiddle Leaf Fig",
+    "type": "Tree",
+    "weeklyWaterNeed": 1.5,
+    "expectedHumidity": 55,
+    "coverImage": "https://images.unsplash.com/photo-1453904300235-0f2f60b15b5d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": "5",
+    "name": "Spider Plant",
+    "type": "Air Purifying",
+    "weeklyWaterNeed": 1,
+    "expectedHumidity": 50,
+    "coverImage": "https://images.unsplash.com/photo-1647631703145-01e8bf7cd149?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": "6",
+    "name": "Cactus",
+    "type": "Succulent",
+    "weeklyWaterNeed": 0.2,
+    "expectedHumidity": 30,
+    "coverImage": "https://images.unsplash.com/photo-1554631221-f9603e6808be?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": "7",
+    "name": "Monstera Deliciosa",
+    "type": "Foliage",
+    "weeklyWaterNeed": 0.8,
+    "expectedHumidity": 60,
+    "coverImage": "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": "8",
+    "name": "Pothos",
+    "type": "Climbing",
+    "weeklyWaterNeed": 0.7,
+    "expectedHumidity": 50,
+    "coverImage": "https://images.unsplash.com/photo-1613737693063-a3c03b374aaf?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
+]

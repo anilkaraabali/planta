@@ -14,7 +14,7 @@ interface CarouselBannerProps extends ComponentPropsWithRef<'div'> {
 
 const CarouselBanner = forwardRef<HTMLDivElement, CarouselBannerProps>(
   ({ images, options, plugins = [], ...containerProps }, ref) => {
-    const [carouselRef] = useEmblaCarousel(
+    const [emblaRef] = useEmblaCarousel(
       {
         dragFree: true,
         loop: true,
@@ -33,7 +33,7 @@ const CarouselBanner = forwardRef<HTMLDivElement, CarouselBannerProps>(
 
     return (
       <div className={clsx('w-full py-4', containerProps.className)} ref={ref}>
-        <div className='relative size-full overflow-hidden' ref={carouselRef}>
+        <div className='relative size-full overflow-hidden' ref={emblaRef}>
           <ul className='absolute inset-0 flex size-full items-center gap-6'>
             {images.map((image, index) => (
               <li className='relative h-full min-w-0 flex-none' key={index}>

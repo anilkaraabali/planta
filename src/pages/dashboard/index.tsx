@@ -5,7 +5,7 @@ import { getSSRPageProps } from '@/utils';
 
 export const getServerSideProps = (async (ctx) => ({
   props: {
-    ...(await getSSRPageProps(ctx, ['Home'])),
+    ...(await getSSRPageProps(ctx, ['Dashboard'])),
   },
 })) satisfies GetServerSideProps<DashboardPageProps>;
 

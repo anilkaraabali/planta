@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import 'aspect-ratio';
+@import 'product';
 
 :root {
   --font-mono: 'Fira Code', monospace;
@@ -18,4 +19,12 @@
 
 .page-title {
   @apply mb-2 px-4 py-10 font-mono text-3xl font-bold uppercase lg:text-5xl;
+}
+
+.dashboard-headline {
+  @apply px-4 py-10;
+}
+
+.dashboard-title {
+  @apply mb-2 font-mono text-3xl font-bold uppercase lg:text-5xl;
 }

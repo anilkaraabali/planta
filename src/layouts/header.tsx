@@ -30,7 +30,7 @@ const Header = () => {
           className='md:hidden'
         />
         <NavbarBrand>
-          <Logo className='text-[#234823]' />
+          <Logo />
         </NavbarBrand>
       </NavbarContent>
 

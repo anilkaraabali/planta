@@ -1,0 +1,133 @@
+{
+  "Account": {
+    "signOut": {
+      "cta": "Sign out",
+      "description": "Are you sure you want to sign out?"
+    },
+    "welcome": {
+      "title": "Welcome back, {name}"
+    }
+  },
+  "Auth": {
+    "email": {
+      "cta": "Send link",
+      "title": "Enter your<br/>email address"
+    },
+    "description": "Sign in with your email or sign up to become a Planta member.",
+    "confirm": {
+      "resend": "Resend code",
+      "resendIn": "Please wait {time}s before resending.",
+      "title": "Almost There! 🚀",
+      "description": "A confirmation email has been sent. Please check your inbox!"
+    },
+    "social": {
+      "apple": "Continue with Apple",
+      "email": "Continue with email",
+      "google": "Continue with Google"
+    },
+    "title": "Let's get<br/>started"
+  },
+  "Common": {
+    "comingSoon": "Coming soon",
+    "cta": {
+      "account": "My account",
+      "noThanks": "No, thanks",
+      "signIn": "Sign in",
+      "showMore": "Show more",
+      "showLess": "Show less"
+    },
+    "form": {
+      "email": {
+        "label": "Email",
+        "placeholder": "Type your email",
+        "errorMessage": "Invalid email. Email must be a valid email address"
+      },
+      "required": "This field cannot be left blank",
+      "terms": {
+        "label": "By signing up, you agree to our <a class='underline' href='#'>Terms of Service</a> and <a class='underline' href='#'>Privacy Policy</a>.",
+        "required": "Please accept the terms and conditions to finish the signup"
+      }
+    },
+    "or": "or",
+    "homepage": {
+      "title": "Go to homepage",
+      "ariaLabel": "Go to homepage"
+    },
+    "theme": {
+      "dark": "Dark theme",
+      "light": "Light theme",
+      "system": "System theme"
+    },
+    "languageSwitch": {
+      "button": {
+        "ariaLabel": "Language switch",
+        "title": "Language switch"
+      },
+      "menu": {
+        "ariaLabel": "Language selection menu"
+      }
+    },
+    "recaptcha": {
+      "error": "Please confirm that you are not a robot.",
+      "info": "This site is protected by reCAPTCHA and the Google <a class='underline' href='https://policies.google.com/privacy'>Privacy Policy</a> and <a class='underline' href='https://policies.google.com/terms'>Terms of Service</a> apply."
+    },
+    "menu": {
+      "women": "Women",
+      "men": "Men",
+      "kids": "Kids",
+      "home": "Home"
+    },
+    "share": {
+      "facebook": "Share on Facebook",
+      "twitter": "Share on Twitter",
+      "x": "Share on X",
+      "whatsapp": "Share on WhatsApp",
+      "mail": "Share via Email",
+      "copyLink": "Copy link",
+      "copiedToClipboard": "Link has been copied to the clipboard"
+    }
+  },
+  "Error": {
+    "404": {
+      "title": "Oh no! You shouldn't be seeing this",
+      "detail": "Sorry, the page you're looking for doesn't exist."
+    },
+    "500": {
+      "title": "Oops, that's our mistake.",
+      "detail": "We're not quite sure what happened, but our servers say something is wrong. We apologize and are working to fix the issue. Please try again later."
+    },
+    "400": {
+      "title": "Something went wrong",
+      "detail": "There seems to be an error processing your request."
+    },
+    "cta": "Return to the homepage"
+  },
+  "Footer": {
+    "home": "Home",
+    "corpareteInfo": "Corparete Info",
+    "careers": "Career at Planta",
+    "about": "About Planta",
+    "sustainability": "Sustainability Planta",
+    "press": "Press",
+    "help": "Help",
+    "customerService": "Customer Service",
+    "storeLocator": "Store Locator",
+    "giftCards": "Gift Cards",
+    "legal": "Legal & Privacy",
+    "termsOfService": "Terms of service",
+    "privacyPolicy": "Privacy policy",
+    "cookiesPolicy": "Cookies policy",
+    "license": "License",
+    "copyright": "© 2025 Planta, Inc. All rights reserved.",
+    "tagline": "We help people build lasting connections with their plants through smart, intuitive care—one leaf at a time."
+  },
+  "Home": {
+    "hero": {
+      "title": "Keep your plants alive",
+      "description": "Individual care schedule and reminders for your plants, recommendations, step by step guides, identification, light meter and more. Keep your plants alive with Planta!",
+      "primaryAction": "Download now",
+      "secondaryAction": "Buy now",
+      "socialProof": "Used by over 7M plant lovers"
+    }
+  }
+}

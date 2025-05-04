@@ -1,0 +1,22 @@
+{
+  "name": "Plant care app - Keep your plants alive | Planta",
+  "short_name": "Planta",
+  "description": "Individual care schedule and reminders for your plants, recommendations, step by step guides, identification, light meter and more. Keep your plants alive with Planta!",
+  "icons": [
+    {
+      "src": "./android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/"
+}

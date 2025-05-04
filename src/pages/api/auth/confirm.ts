@@ -4,7 +4,11 @@ import {
   readUsersFromFile,
   updateEmailVerified,
 } from '@/features/auth/index.server';
+import { serialize } from 'cookie';
 import { NextApiRequest, NextApiResponse } from 'next';
+
+// eslint-disable-next-line no-magic-numbers
+const EXPIRES_IN = 60 * 60 * 24 * 7;
 
 export default async function handler(
   req: NextApiRequest,
@@ -21,9 +25,9 @@ export default async function handler(
 
     try {
       const users = await readUsersFromFile();
-      const userExists = users.some((user) => user.email === email);
+      const user = users.find((user) => user.email === email);
 
-      if (!userExists) {
+      if (!user) {
         return res
           .status(HTTP_STATUS.NOT_FOUND)
           .json({ error: 'Email not linked to any user' });
@@ -34,6 +38,16 @@ export default async function handler(
       const match = otps.find((entry) => entry === otp);
 
       if (match) {
+        res.setHeader(
+          'Set-Cookie',
+          serialize('userId', user.id, {
+            httpOnly: true,
+            maxAge: EXPIRES_IN,
+            path: '/',
+            sameSite: 'lax',
+            secure: process.env.NODE_ENV === 'production',
+          })
+        );
         await updateEmailVerified(email, true);
 
         return res.status(HTTP_STATUS.OK).json({

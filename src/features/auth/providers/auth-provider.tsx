@@ -11,15 +11,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 const AuthProvider: FC<PropsWithChildren<{ user: User | null }>> = ({
   children,
   user,
-}) => (
-  <AuthContext.Provider
-    value={{
-      user,
-    }}
-  >
-    {children}
-  </AuthContext.Provider>
-);
+}) => <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>;
 
 const useAuth = () => {
   const context = useContext(AuthContext);

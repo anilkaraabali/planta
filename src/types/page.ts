@@ -1,4 +1,4 @@
-import { User } from '@supabase/supabase-js';
+import { User } from '@/features/auth';
 import { AbstractIntlMessages } from 'next-intl';
 
 interface PageProps {

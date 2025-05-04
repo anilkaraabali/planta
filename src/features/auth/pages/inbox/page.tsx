@@ -2,6 +2,7 @@ import { LanguageSwitch } from '@/components/language-switch';
 import { Logo } from '@/components/logo';
 import { NextPageWithLayout } from '@/pages/_app';
 import { AbstractIntlMessages, useTranslations } from 'next-intl';
+import { list } from 'radash';
 import { useCallback, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -10,12 +11,14 @@ import { AuthConfirm } from '../../components/AuthConfirm';
 import { AuthEmailForm } from '../../components/AuthEmailForm';
 import { AuthSocials } from '../../components/AuthSocials';
 import { AuthProvider } from '../../components/types';
-import { AUTH_PREVIEW_VIDEOS } from '../../constants/videos';
 
 interface InboxPageProps {
   messages: AbstractIntlMessages;
   referer: string;
 }
+
+const VIDEO_START_INDEX = 1;
+const VIDEO_END_INDEX = 3;
 
 const InboxPage = (_: InboxPageProps) => {
   const t = useTranslations('Auth');
@@ -40,7 +43,7 @@ const InboxPage = (_: InboxPageProps) => {
       default:
         return (
           <>
-            <Logo showText={false} />
+            <Logo />
             <div className='mx-auto flex max-w-52 flex-col gap-3'>
               <h1
                 className='text-center text-4xl font-bold'
@@ -68,26 +71,25 @@ const InboxPage = (_: InboxPageProps) => {
           showStatus={false}
           showThumbs={false}
         >
-          {AUTH_PREVIEW_VIDEOS.map((video, index) => (
-            <video
-              autoPlay
-              className='w-full'
-              controlsList='nodownload'
-              disablePictureInPicture
-              disableRemotePlayback
-              key={index}
-              loop
-              muted
-              playsInline
-              preload='metadata'
-            >
-              <source
-                media='(max-width: 1024px)'
-                src={video.portrait}
-                type='video/mp4'
-              />
-              <source src={video.landscape} type='video/mp4' />
-            </video>
+          {list(VIDEO_START_INDEX, VIDEO_END_INDEX).map((index) => (
+            <div className='relative w-full' key={index}>
+              <video
+                autoPlay
+                className='w-full'
+                controlsList='nodownload'
+                disablePictureInPicture
+                disableRemotePlayback
+                loop
+                muted
+                playsInline
+              >
+                <source
+                  src={`/videos/auth/video-${index}.mp4`}
+                  type='video/mp4'
+                />
+              </video>
+              <div className='pointer-events-none absolute inset-0 bg-black/40' />
+            </div>
           ))}
         </Carousel>
       </div>

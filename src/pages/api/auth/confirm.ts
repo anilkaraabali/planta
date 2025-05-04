@@ -1,41 +1,79 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { HTTP_STATUS } from '@/constants';
+import {
+  readOtpsFromFile,
+  readUsersFromFile,
+  updateEmailVerified,
+} from '@/features/auth/index.server';
+import { serialize } from 'cookie';
+import { NextApiRequest, NextApiResponse } from 'next';
 
-import { createApiClient } from '@/utils/supabase';
-import { type EmailOtpType } from '@supabase/supabase-js';
-
-function stringOrFirstString(item: string | string[] | undefined) {
-  return Array.isArray(item) ? item[0] : item;
-}
-
-const METHOD_NOT_ALLOWED = 405;
+// eslint-disable-next-line no-magic-numbers
+const EXPIRES_IN = 60 * 60 * 24 * 7;
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== 'GET') {
-    res.status(METHOD_NOT_ALLOWED).appendHeader('Allow', 'GET').end();
+  if (req.method === 'POST') {
+    const { email, otp } = req.body;
 
-    return;
-  }
-  const queryParams = req.query;
-  const token_hash = stringOrFirstString(queryParams.token_hash);
-  const type = stringOrFirstString(queryParams.type);
-  let next = '/error';
+    if (!email || !otp) {
+      return res
+        .status(HTTP_STATUS.BAD_REQUEST)
+        .json({ error: 'Email and OTP are required' });
+    }
 
-  if (token_hash && type) {
-    const supabase = createApiClient(req, res);
-    const { error } = await supabase.auth.verifyOtp({
-      token_hash,
-      type: type as EmailOtpType,
-    });
+    try {
+      const users = await readUsersFromFile();
+      const user = users.find((user) => user.email === email);
 
-    if (error) {
+      if (!user) {
+        return res
+          .status(HTTP_STATUS.NOT_FOUND)
+          .json({ error: 'Email not linked to any user' });
+      }
+
+      const otps = await readOtpsFromFile();
+
+      const match = otps.find((entry) => entry === otp);
+
+      if (match) {
+        res.setHeader(
+          'Set-Cookie',
+          serialize('userId', user.id, {
+            httpOnly: true,
+            maxAge: EXPIRES_IN,
+            path: '/',
+            sameSite: 'lax',
+            secure: process.env.NODE_ENV === 'production',
+          })
+        );
+        await updateEmailVerified(email, true);
+
+        return res.status(HTTP_STATUS.OK).json({
+          message: 'OTP verified successfully.',
+          verified: true,
+        });
+      }
+
+      return res.status(HTTP_STATUS.BAD_REQUEST).json({
+        message: 'Invalid OTP.',
+        verified: false,
+      });
+    } catch (error) {
+      // Handle potential errors during file reading
       // eslint-disable-next-line no-console
-      console.error('Error verifying OTP:', error.message);
-    } else {
-      next = stringOrFirstString(queryParams.next) || '/';
+      console.error('Error verifying OTP:', error);
+
+      return res
+        .status(HTTP_STATUS.INTERNAL_SERVER_ERROR)
+        .json({ error: 'Internal server error' });
     }
   }
-  res.redirect(next);
+
+  res.setHeader('Allow', ['POST']);
+
+  return res
+    .status(HTTP_STATUS.METHOD_NOT_ALLOWED)
+    .json({ error: 'Method Not Allowed' });
 }

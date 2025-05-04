@@ -2,7 +2,6 @@
 
 Planta is a modern, full-featured web application designed to help users care for their plants with ease. It offers an intuitive experience for plant discovery, tracking, and personalized care tips — with a seamless authentication process and a beautiful UI.
 
-
 ## Demo 🎥
 
 Check out the live demo of Planta!
@@ -16,7 +15,6 @@ Planta is built with a modern stack to deliver an exceptional user experience:
 - React & Next.js ⚛️: Dynamic, server-side rendered UIs.
 - [Tailwind CSS](https://tailwindcss.com/) 🌈: Utility-first styling for fast development.
 - [Storybook](https://storybook.js.org/) 📖: Develop and test UI components in isolation.
-- [Supabase](https://supabase.com/) 🔒: Authentication and backend services.
 - [Vitest](https://vitest.dev/) & [React Testing Library](https://testing-library.com/) 🧪: For reliable testing and bug-free code.
 - TypeScript 💻: Type safety for smoother development.
 - [HeroUI](https://www.heroui.com/) 🎨: A design system for consistent UI components.
@@ -49,28 +47,7 @@ npm install -g pnpm
 
 ### External Services
 
-- Supabase Account: Sign up for a free-tier account at [Supabase](https://supabase.com/) and create a project.
 - reCAPTCHA v3: Obtain API keys from [Google reCAPTCHA](https://www.google.com/recaptcha/admin/site/716490403).
-
-## Supabase Setup ⚡
-
-### Create a Supabase Project
-
-Sign up for a free-tier account at Supabase and create a new project.
-
-### Get API Keys
-
-Once your project is created, go to Project Settings > API and retrieve the following keys:
-
-- Supabase URL → `NEXT_PUBLIC_SUPABASE_URL`
-- Anon Key → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-
-Add these to your .env.local file:
-
-```bash
-NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
-```
 
 ## Getting Started ⚙️
 

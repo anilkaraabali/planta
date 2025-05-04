@@ -1,8 +1,9 @@
+import { User } from '@/features/auth';
 import { LocaleType, PageProps } from '@/types';
+import cookie from 'cookie';
 import { GetServerSidePropsContext } from 'next';
 
 import { getMessages } from './get-messages';
-// import { createServerPropsClient } from './supabase';
 
 const getSSRPageProps = async (
   ctx: GetServerSidePropsContext,
@@ -10,13 +11,15 @@ const getSSRPageProps = async (
 ): Promise<PageProps> => {
   const locale = ctx.locale as LocaleType;
 
-  // const supabase = createServerPropsClient(ctx);
-  // const { data, error } = await supabase.auth.getUser();
+  const cookies = cookie.parse(ctx.req.headers.cookie || '');
+  const userId = cookies.userId;
+
+  const users = (await import('public/data/users.json')).default as User[];
+  const user = users.find((user) => user.id === userId) as User;
 
   return {
     messages: await getMessages(locale, tScopes),
-    // user: error || !data ? null : data.user,
-    user: null,
+    user: user || null,
   };
 };
 

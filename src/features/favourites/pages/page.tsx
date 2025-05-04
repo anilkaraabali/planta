@@ -32,7 +32,7 @@ const FavouritesPage = () => {
   const [shouldFetch, setShouldFetch] = useState(false);
 
   const { data, error, isLoading } = useSWR<Product[]>(
-    shouldFetch ? '/api/plants' : null,
+    shouldFetch ? '/api/products' : null,
     fetcher
   );
 

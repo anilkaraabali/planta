@@ -39,6 +39,16 @@ If pnpm is not installed, you can install it globally by running:
 npm install -g pnpm
 ```
 
+### Local Environment Setup
+
+To configure your local environment, create a `.env.development.local` file in the root directory of the project. You can use the provided `.env.development.example` file as a reference:
+
+```bash
+cp .env.development.example .env.development.local
+```
+
+Update the values in `.env.development.local` with your own configuration details. This file will be ignored by version control and is intended for your local development setup only.
+
 ### External Services
 
 - reCAPTCHA v3: Obtain API keys from [Google reCAPTCHA](https://www.google.com/recaptcha/admin/site/716490403).

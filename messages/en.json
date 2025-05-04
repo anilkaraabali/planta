@@ -134,5 +134,69 @@
       "secondaryAction": "Buy now",
       "socialProof": "Used by over 7M plant lovers"
     }
+  },
+  "Dashboard": {
+    "title": "Welcome, {name}"
+  },
+  "Favourites": {
+    "title": "Favourites",
+    "empty": {
+      "title": "Save your favourite items",
+      "description": "Want to save the items that you love? Just click on the heart symbol beside the item and it will appear here.",
+      "cta": "Explore Plants"
+    },
+    "total": "{count, plural, one {# item} other {# items}}"
+  },
+  "Product": {
+    "addToFavourites": "Add to Favourites",
+    "removeFromFavourites": "Remove from Favourites",
+    "addToList": "Add",
+    "empty": {
+      "title": "You haven't added any plants yet",
+      "description": "Your plants will appear here once you add them. Use the 'Add Plant' button at the top to get started.",
+      "cta": "Explore Plants"
+    },
+    "cta": {
+      "cancel": "Cancel",
+      "add": "Add to my plants"
+    },
+    "form": {
+      "required": "This field cannot be left blank"
+    },
+    "addForm": {
+      "title": "Add a new plant",
+      "description": "Add a new plant to your collection",
+      "name": {
+        "label": "Name",
+        "placeholder": "e.g. Monstera Deliciosa"
+      },
+      "type": {
+        "label": "Type",
+        "placeholder": "e.g. Tropical, Succulent, Fern"
+      },
+      "coverImage": {
+        "label": "Cover image",
+        "placeholder": "Paste an image URL for your plant"
+      },
+      "expectedHumidity": {
+        "label": "Expected humidity",
+        "placeholder": "e.g. 60"
+      },
+      "weeklyWaterNeed": {
+        "label": "Weekly water need",
+        "placeholder": "e.g. 250"
+      },
+      "success": {
+        "title": "Plant added successfully",
+        "description": "Your plant has been added to your collection."
+      }
+    }
+  },
+  "Search": {
+    "title": "Featured plants",
+    "total": "{count, plural, one {# item} other {# items}}",
+    "cta": {
+      "add": "Add new"
+    }
   }
 }

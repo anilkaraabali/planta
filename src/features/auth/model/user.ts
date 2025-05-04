@@ -1,3 +1,5 @@
+import { Product } from '@/features/product/model';
+
 interface User {
   createdAt: string;
   email: string;
@@ -5,6 +7,7 @@ interface User {
   id: string;
   image: null | string;
   name: null | string;
+  plants: Product[];
   provider: 'apple' | 'credentials' | 'google';
   providerId: string;
   updatedAt: null | string;

@@ -2,12 +2,6 @@
 
 Planta is a modern, full-featured web application designed to help users care for their plants with ease. It offers an intuitive experience for plant discovery, tracking, and personalized care tips — with a seamless authentication process and a beautiful UI.
 
-## Demo 🎥
-
-Check out the live demo of Planta!
-
-[Try it live →](https://acme-commerce-beta.vercel.app/)
-
 ## Tech-stack ⚡
 
 Planta is built with a modern stack to deliver an exceptional user experience:

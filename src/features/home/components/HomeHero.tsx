@@ -66,7 +66,7 @@ const HomeHero: FC = () => {
         loop
         muted
         onContextMenu={(e) => e.preventDefault()}
-        src='/hero.webm'
+        src='/videos/hero.webm'
       />
       <div className='relative z-10 mx-auto grid size-full max-w-7xl grid-rows-[1fr_300px] overflow-hidden px-4 md:grid-rows-[1fr_400px] lg:grid-cols-[1fr_500px] lg:grid-rows-1'>
         <div className='flex  max-w-3xl flex-col gap-6 self-center'>

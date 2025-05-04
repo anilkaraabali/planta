@@ -14,17 +14,7 @@ const getSSRPageProps = async (
   const cookies = cookie.parse(ctx.req.headers.cookie || '');
   const userId = cookies.userId;
 
-  let users: User[] = [];
-
-  try {
-    users = (await import('public/data/users.json')).default as User[];
-  } catch (err) {
-    // eslint-disable-next-line no-console
-    console.error('Error fetching users data:', err);
-
-    users = [];
-  }
-
+  const users = (await import('public/data/users.json')).default as User[];
   const user = users.find((user) => user.id === userId) as User;
 
   return {

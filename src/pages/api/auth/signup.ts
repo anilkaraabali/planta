@@ -35,7 +35,7 @@ export default async function handler(
       emailVerified: false,
       id: crypto.randomUUID(),
       image: null,
-      name: null,
+      name: 'Noname',
       provider: 'credentials',
       providerId: email,
       updatedAt: null,

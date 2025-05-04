@@ -39,7 +39,6 @@ next-env.d.ts
 
 # static
 /public/pdf.worker.js
-/public/data/users.json
 
 # platform
 /iOS

@@ -2,10 +2,10 @@ import { NextSeoProps } from 'next-seo';
 
 const seoConfig: NextSeoProps = {
   description:
-    "Individual care schedule and reminders for your plants, recommendations, step by step guides, identification, light meter and more. Keep your plants alive with Planta!",
+    'Individual care schedule and reminders for your plants, recommendations, step by step guides, identification, light meter and more. Keep your plants alive with Planta!',
   openGraph: {
     description:
-      "Individual care schedule and reminders for your plants, recommendations, step by step guides, identification, light meter and more. Keep your plants alive with Planta!",
+      'Individual care schedule and reminders for your plants, recommendations, step by step guides, identification, light meter and more. Keep your plants alive with Planta!',
     images: [
       {
         height: 630,
@@ -16,7 +16,8 @@ const seoConfig: NextSeoProps = {
     ],
     locale: 'en_IE',
     site_name: 'Planta',
-    title: 'Individual care schedule and reminders for your plants, recommendations, step by step guides, identification, light meter and more. Keep your plants alive with Planta!',
+    title:
+      'Individual care schedule and reminders for your plants, recommendations, step by step guides, identification, light meter and more. Keep your plants alive with Planta!',
     type: 'website',
     url: 'https://acme-commerce-beta.vercel.app',
   },

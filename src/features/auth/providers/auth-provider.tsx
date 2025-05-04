@@ -1,5 +1,6 @@
-import { User } from '@supabase/supabase-js';
 import { FC, PropsWithChildren, createContext, useContext } from 'react';
+
+import { User } from '../model';
 
 interface AuthContextType {
   user: User | null;

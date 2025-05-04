@@ -1,4 +1,3 @@
-import { createComponentClient } from '@/utils/supabase';
 import { Button } from '@heroui/react';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -15,11 +14,8 @@ const AccountPage: NextPage<AccountPageProps> = () => {
   const router = useRouter();
   const { user } = useAuth();
 
-  const supabase = createComponentClient();
-
   const handleSignOut = async () => {
     try {
-      await supabase.auth.signOut();
       router.push('/');
     } catch (err) {
       // eslint-disable-next-line no-console

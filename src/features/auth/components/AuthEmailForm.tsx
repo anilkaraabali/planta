@@ -1,4 +1,3 @@
-import { createComponentClient } from '@/utils/supabase';
 import { Alert, Button, Form, Input } from '@heroui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
@@ -28,7 +27,6 @@ const AuthEmailForm: FC<AuthEmailFormProps> = ({
   const t = useTranslations();
 
   const { executeRecaptcha } = useGoogleReCaptcha();
-  const supabase = createComponentClient();
 
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -76,19 +74,20 @@ const AuthEmailForm: FC<AuthEmailFormProps> = ({
           return;
         }
 
-        const { error } = await supabase.auth.signInWithOtp({
-          email: formData.email,
-          options: {
-            captchaToken,
+        const response = await fetch('/api/auth/signup', {
+          body: JSON.stringify(formData),
+          headers: {
+            'Content-Type': 'application/json',
           },
+          method: 'POST',
         });
+        const result = await response.json();
 
-        if (error) {
-          setErrorMessage(error.message);
-          setIsLoading(false);
-        } else {
+        if (response.ok) {
           setEmail(formData.email);
           setStep('confirm');
+        } else {
+          setErrorMessage(result.error);
         }
       } catch (err) {
         // eslint-disable-next-line no-console
@@ -97,7 +96,7 @@ const AuthEmailForm: FC<AuthEmailFormProps> = ({
         setIsLoading(false);
       }
     },
-    [supabase, verifyRecaptcha]
+    [verifyRecaptcha]
   );
 
   return (
